@@ -79,7 +79,7 @@ spec:
           {{- if or (eq .Values.persistence.enabled true) .Values.mountedConfigs }}
           volumeMounts:
             {{- range .Values.mountedConfigs }}
-            - name: {{ .name }}
+            - name: "{{ include "shared-helm-chart.fullname" $ }}-{{ .name }}"
               mountPath: {{ .mountPath }}
             {{- end }}
             {{- if .Values.persistence.enabled }}
