@@ -147,7 +147,7 @@ persistence:
       annotations: {}
 
 # Static environment variables to pass to the deployment
-env: {}
+env: []
 
 mountedConfigs: []
   # Example
