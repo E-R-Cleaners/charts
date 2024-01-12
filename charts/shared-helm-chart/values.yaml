@@ -101,7 +101,7 @@ ingress:
     - host: chart-example.eandrcleaners.corp
       paths:
         - path: /
-          pathType: prefix
+          pathType: Prefix
   tls: 
     - secretName: example-tls-secret
       issuerRef: 

@@ -103,7 +103,7 @@ spec:
         {{- end }}
         {{- if .Values.persistence.enabled }}
         {{- range .Values.persistence.claims}}
-        - name: {{ .name }}
+        - name: "{{ include "shared-helm-chart.fullname" $ }}-{{ .name }}"
           persistentVolumeClaim:
             claimName: "{{ include "shared-helm-chart.fullname" $ }}-{{ .name }}"
         {{- end }}
