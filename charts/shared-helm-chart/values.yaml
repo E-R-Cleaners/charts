@@ -102,14 +102,14 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
-  tls: 
-    - secretName: example-tls-secret
-      issuerRef: 
-        name: nginx-ca-issuer
-        kind: ClusterIssuer
-      hosts:
-      - chart-example.eandrcleaners.corp
-      annotations: {}
+  tls: []
+    # - secretName: example-tls-secret
+    #   issuerRef: 
+    #     name: nginx-ca-issuer
+    #     kind: ClusterIssuer
+    #   hosts:
+    #   - chart-example.eandrcleaners.corp
+    #   annotations: {}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
