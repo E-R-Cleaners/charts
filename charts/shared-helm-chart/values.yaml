@@ -14,6 +14,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# will allow for complex command overrides for main container
+commandOverride: []
+
 readinessProbe:
   enabled: false
   # Path for the readinessProbe to use httpGet as the readinessProbe handler
