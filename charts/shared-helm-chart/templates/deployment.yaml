@@ -31,7 +31,7 @@ spec:
         - name: {{ .Chart.Name }}
           {{- if .Values.commandOverride }}
           command:
-            {{- range .values.commandOverride }}
+            {{- range .Values.commandOverride }}
             - {{.}}
             {{- end}}
           {{- end }}
