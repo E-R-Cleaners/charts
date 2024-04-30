@@ -32,7 +32,7 @@ spec:
           {{- if .Values.commandOverride }}
           command:
             {{- range .Values.commandOverride }}
-            - {{.}}
+            - {{.|quote}}
             {{- end}}
           {{- end }}
           securityContext:
