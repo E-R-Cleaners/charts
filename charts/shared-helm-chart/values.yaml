@@ -149,6 +149,14 @@ persistence:
       accessMode: ReadWriteOnce
       annotations: {}
 
+hostVolumes:
+  enabled: true
+  claims:
+    - name: manual host claim
+      path: /path/on/pod
+      hostPath: /path/on/host
+      type: Directory
+
 # Static environment variables to pass to the deployment
 env: []
 

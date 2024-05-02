@@ -82,8 +82,14 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             {{- toYaml .Values.env | nindent 12 }}
-          {{- if or (eq .Values.persistence.enabled true) .Values.mountedConfigs }}
+          {{- if or (eq .Values.persistence.enabled true) .Values.mountedConfigs (eq .Values.hostVolumes.enabled true) }}
           volumeMounts:
+            {{- if .Values.hostVolumes.enabled }}
+            {{- range .Values.hostVolumes.claims}}
+            - name: {{ .name }}
+              mountPath: {{ .path }}
+            {{- end }}
+            {{- end }}
             {{- range .Values.mountedConfigs }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
@@ -95,8 +101,16 @@ spec:
             {{- end }}
             {{- end }}
           {{- end }}
-      {{- if or (eq .Values.persistence.enabled true) .Values.mountedConfigs }}
+      {{- if or (eq .Values.persistence.enabled true) .Values.mountedConfigs (eq .Values.hostVolumes.enabled true) }}
       volumes:
+        {{- if .Values.hostVolumes.enabled }}
+        {{- range .Values.hostVolumes.claims}}
+        - name: {{ .name }}
+          hostPath:
+            path: {{ .hostPath }}
+            type: {{ .type }}
+        {{- end }}
+        {{- end }}
         {{- range .Values.mountedConfigs }}
         - name: {{ .name }}
           configMap:
