@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   shared-helm-chart:
   - apiVersion: v2
+    created: "2024-10-02T23:37:55.407324796Z"
+    description: A Helm chart for Kubernetes
+    digest: 5a9dc7b8a878f0f52fec35b0639f69b6579c1860692fc47a676a3f9b7c88003c
+    name: shared-helm-chart
+    type: application
+    urls:
+    - https://github.com/E-R-Cleaners/charts/releases/download/shared-helm-chart-1.1.2/shared-helm-chart-1.1.2.tgz
+    version: 1.1.2
+  - apiVersion: v2
     created: "2024-05-02T01:05:57.093859663Z"
     description: A Helm chart for Kubernetes
     digest: c162251f13ab1e66ef10fe4e64d5738bbddc93bc80c34bbe9c1c16aba6a169dc
@@ -154,4 +163,4 @@ entries:
     urls:
     - https://github.com/E-R-Cleaners/charts/releases/download/shared-helm-chart-0.1.0/shared-helm-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-02T01:05:57.093983194Z"
+generated: "2024-10-02T23:37:55.407444671Z"
