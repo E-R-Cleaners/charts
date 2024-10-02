@@ -11,6 +11,7 @@ metadata:
     {{- toYaml .annotations | nindent 4 }}
   {{- end}}
 spec:
+  storageClassName: {{ .storageClass }}
   accessModes:
     - {{ .accessMode }}
   resources:
