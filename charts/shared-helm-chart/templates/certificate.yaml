@@ -1,5 +1,6 @@
-{{- if .Values.ingress.enabled -}}
-{{- range .Values.ingress.tls }}
+{{- range .Values.ingresses }}
+{{- if .enabled -}}
+{{- range .tls }}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -20,5 +21,6 @@ spec:
     - {{ . | quote }}
     {{- end }}
 ---
+{{- end }}
 {{- end }}
 {{- end }}
